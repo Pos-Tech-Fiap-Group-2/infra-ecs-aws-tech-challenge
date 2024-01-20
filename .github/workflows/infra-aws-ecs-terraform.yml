@@ -6,13 +6,16 @@ on:
   pull_request:
     types: [assigned]
 
+env:
+  working-directory: infra
+
 permissions:
   id-token: write
   contents: read
 
 jobs:
   terraform:
-    name: 'Terraform'
+    name: 'Setup-Terraform'
     runs-on: ubuntu-latest
 
     defaults:
@@ -37,18 +40,26 @@ jobs:
         aws-session-token: ${{ secrets.AWS_SESSION_TOKEN}}
         aws-region: us-east-1
 
-    - name: Terraform Init
-      run: terraform init
-
     - name: Terraform Format
       run: terraform fmt -check
+      working-directory: ${{ env.working-directory }}
+
+    - name: Terraform Init
+      run: terraform init
+      working-directory: ${{ env.working-directory }}
+
+    - name: Terraform Validate
+      run: terraform validate
+      working-directory: ${{ env.working-directory }}
 
     - name: Terraform Plan
       run: terraform plan -out=tfplan -input=false
+      working-directory: ${{ env.working-directory }}
 
     - name: Terraform Apply
       if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
       run: terraform apply tfPlan -auto-approve -input=false
+      working-directory: ${{ env.working-directory }}
 
     - name: Cleanup Terraform Plan
       run: rm -f tfplan
