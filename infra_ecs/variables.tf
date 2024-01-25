@@ -8,21 +8,10 @@ variable "cluster_name" {
 
 }
 
-variable "lb_name" {
-  default = "tech-challenge-lb"
-
-}
-
-variable "lb_tg_name" {
-  default = "tech-challenge-lb-tg"
-
-}
-
-variable "alb_sg_name" {
-  default = "tech-challenge-alb-sg"
-
-}
-
 variable "aws_cloudwatch_log_group" {
   default = "/ecs/tech-challenge"
+}
+
+variable "mongodb_cluster" {
+  default = "mongodb-tech-challenge-cluster"
 }
