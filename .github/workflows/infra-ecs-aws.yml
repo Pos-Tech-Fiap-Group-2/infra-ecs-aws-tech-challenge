@@ -7,7 +7,7 @@ on:
     types: [assigned]
 
 env:
-  working-directory: infra_ecs
+  working-directory: infra-ecs-aws
   aws-region: us-east-1
 
 permissions:
