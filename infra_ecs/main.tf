@@ -1,6 +1,6 @@
 resource "aws_kms_key" "tech-challenge-kms-key" {
   description             = "KMS Key for Tech-Challenge"
-  deletion_window_in_days = 1
+  deletion_window_in_days = 7
   is_enabled              = true
   enable_key_rotation     = true
 
