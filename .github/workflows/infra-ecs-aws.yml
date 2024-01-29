@@ -2,7 +2,7 @@ name: 'Deploy Infraestrutura do ECS'
 
 on:
   push:
-    branches: [ "feature/criacao-infra-ecs" ]
+    branches: [ "feature/criacao-infra-ecs", "main" ]
   pull_request:
     types: [assigned]
 
@@ -58,9 +58,6 @@ jobs:
       working-directory: ${{ env.working-directory }}
 
     - name: Terraform Apply
-      if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
-      run: terraform apply tfPlan -auto-approve -input=false
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      run: terraform apply -auto-approve -input=false
       working-directory: ${{ env.working-directory }}
-
-    - name: Cleanup Terraform Plan
-      run: rm -f tfplan

@@ -3,6 +3,13 @@
 ### Descrição
 Este projeto visa automatizar a criação de um [Amazon Elastic Container Service (ECS)](https://aws.amazon.com/pt/ecs/) usando [GitHub Workflow](https://docs.github.com/pt/actions) em uma conta AWS utilizando o terraform. é um serviço totalmente gerenciado de orquestração de contêineres que ajuda a implantar, gerenciar e escalar aplicações em contêineres de maneira mais eficiente.
 
+## Membros do Grupo 2
+- [Danilo Monteiro](https://github.com/dmonteirosouza)
+- [Marcel Cozono](https://github.com/macozono)
+- [Viviane Scarlatti](https://github.com/viviane-scarlatti)
+- [Vinicius Furin](https://github.com/VFurin)
+- [Vitor Walcker](https://github.com/VitorWalcker)
+
 ## Configuração
 
 1. **Pré-requisitos:**
