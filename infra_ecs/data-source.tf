@@ -11,9 +11,9 @@ data "aws_subnets" "tech-challenge-subnet" {
     name   = "vpc-id"
     values = [data.aws_vpc.tech-challenge-vpc.id]
   }
-  
+
 }
 
 data "aws_subnet" "selected-subnet" {
- id = tolist(data.aws_subnets.tech-challenge-subnet.ids)[0]
+  id = tolist(data.aws_subnets.tech-challenge-subnet.ids)[0]
 }

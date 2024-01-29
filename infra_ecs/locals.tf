@@ -1,5 +1,5 @@
 locals {
- 
+
   common_tags = {
     "Project" = "ECS Tech-Challenge"
     CreatedAt = timestamp()
