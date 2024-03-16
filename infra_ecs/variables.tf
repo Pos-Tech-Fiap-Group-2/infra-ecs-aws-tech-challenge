@@ -17,9 +17,6 @@ variable "tc-producao-sv" {
 
 }
 
-variable "task_definition_ar" {
-  default = "arn:aws:ecs:us-east-1:818048014896:task-definition/tech-challenge-task:1"
-}
 
 variable "tc-pedido-sv" {
   default = "tc-pedido-sv"
@@ -32,11 +29,16 @@ variable "tc-pagamento-sv" {
 }
 
 variable "security_group_id" {
-  default = "sg-0d1c68c69e3d97445"
+  default = "sg-0e41d18f4540b3587"
 
 }
 
 variable "vpc_id" {
-  default = "vpc-028610ead2f7d6752"
+  default = "vpc-0a47e4de920d31a8d"
 
+}
+
+variable "tc-rabbitmq-sv" {
+  default = "tc-rabbitmq-sv"
+  
 }
