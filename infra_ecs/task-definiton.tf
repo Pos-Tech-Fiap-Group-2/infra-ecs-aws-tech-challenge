@@ -6,7 +6,7 @@ resource "aws_ecs_task_definition" "tech-challenge-api-producao" {
   cpu                      = "1024"
   memory                   = "3072"
   requires_compatibilities = ["FARGATE"]
-  
+
   runtime_platform {
     operating_system_family = "LINUX"
     cpu_architecture        = "X86_64"
@@ -106,7 +106,7 @@ resource "aws_ecs_task_definition" "tech-challenge-rabbitmq" {
   cpu                      = "1024"
   memory                   = "3072"
   requires_compatibilities = ["FARGATE"]
-  
+
   runtime_platform {
     operating_system_family = "LINUX"
     cpu_architecture        = "X86_64"
@@ -193,7 +193,7 @@ resource "aws_ecs_task_definition" "tech-challenge-api-pagamentos" {
   cpu                      = "1024"
   memory                   = "3072"
   requires_compatibilities = ["FARGATE"]
-  
+
   runtime_platform {
     operating_system_family = "LINUX"
     cpu_architecture        = "X86_64"
@@ -203,7 +203,7 @@ resource "aws_ecs_task_definition" "tech-challenge-api-pagamentos" {
   [
     {
       "name": "tech-challenge-api-pagamentos",
-      "image": "654654392738.dkr.ecr.us-east-1.amazonaws.com/tech-challenge-ecr:tc-api-producao:tc-api-pagamentos",
+      "image": "654654392738.dkr.ecr.us-east-1.amazonaws.com/tech-challenge-ecr:tc-api-pagamentos",
       "cpu": 0,
       "portMappings": [
         {
@@ -218,7 +218,7 @@ resource "aws_ecs_task_definition" "tech-challenge-api-pagamentos" {
       "environment": [
         {
           "name": "DB_HOST",
-          "value": "tech-challenge-db.cluster-c1ssc6e4s6n7.us-east-1.rds.amazonaws.com:3306"
+          "value": "tech-challenge-db-instance.c3uuskqmwd2w.us-east-1.rds.amazonaws.com:3306"
         },
         {
           "name": "DB_USER",
@@ -276,7 +276,7 @@ resource "aws_ecs_task_definition" "tech-challenge-api-pedidos" {
   cpu                      = "1024"
   memory                   = "3072"
   requires_compatibilities = ["FARGATE"]
-  
+
   runtime_platform {
     operating_system_family = "LINUX"
     cpu_architecture        = "X86_64"
@@ -286,7 +286,7 @@ resource "aws_ecs_task_definition" "tech-challenge-api-pedidos" {
   [
     {
       "name": "tech-challenge-api-pedidos",
-      "image": "654654392738.dkr.ecr.us-east-1.amazonaws.com/tech-challenge-ecr:tc-api-producao:tc-api-pedidos",
+      "image": "654654392738.dkr.ecr.us-east-1.amazonaws.com/tech-challenge-ecr:tc-api-pedidos",
       "cpu": 0,
       "portMappings": [
         {
@@ -301,7 +301,7 @@ resource "aws_ecs_task_definition" "tech-challenge-api-pedidos" {
       "environment": [
         {
           "name":"DB_HOST",
-          "value":"tech-challenge-db.cluster-c1ssc6e4s6n7.us-east-1.rds.amazonaws.com"
+          "value":"tech-challenge-db-instance.c3uuskqmwd2w.us-east-1.rds.amazonaws.com"
         },
         {
           "name": "DB_USER",
