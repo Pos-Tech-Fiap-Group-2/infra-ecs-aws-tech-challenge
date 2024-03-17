@@ -40,5 +40,5 @@ variable "vpc_id" {
 
 variable "tc-rabbitmq-sv" {
   default = "tc-rabbitmq-sv"
-  
+
 }
